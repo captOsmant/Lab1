@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>darkMag.bmp</file>
+        <file>waterMag.jpg</file>
+        <file>img/deathMag.jpg</file>
+        <file>img/earthMag.jpg</file>
+        <file>img/FireMag.jpg</file>
+        <file>img/darkMag.jpg</file>
+        <file>img/spell1.jpg</file>
+        <file>img/Молния.jpg</file>
+        <file>img/Исцеление.jpg</file>
+        <file>img/Вытягивание жизни.jpg</file>
+        <file>img/Проклятье.jpg</file>
+        <file>img/Вытягивание жизни-min.jpg</file>
+        <file>img/Исцеление-min.jpg</file>
+        <file>img/Молния-min.jpg</file>
+        <file>img/Проклятье-min.jpg</file>
+        <file>img/Огненный смерч.jpg</file>
+        <file>img/Огненный смерч-min.jpg</file>
+        <file>img/Ритуал равновесия.jpg</file>
+        <file>img/Ритуал равновесия-min.jpg</file>
+        <file>img/Спутывание памяти.jpg</file>
+        <file>img/Спутывание памяти-min.jpg</file>
+        <file>img/Медитация.jpg</file>
+        <file>img/Ритуал энергии.jpg</file>
+        <file>img/Ритуал энергии-min.jpg</file>
+        <file>img/Коллапс материи.jpg</file>
+        <file>img/Коллапс материи-min.jpg</file>
+        <file>img/Огненный ритуал-min.jpg</file>
+        <file>img/Огненный ритуал.jpg</file>
+        <file>img/Отравление.jpg</file>
+        <file>img/Отравление-min.jpg</file>
+        <file>img/Окаменение.jpg</file>
+        <file>img/Окаменение-min.jpg</file>
+        <file>img/Дыхание тьмы.jpg</file>
+        <file>img/Дыхание тьмы-min.jpg</file>
+        <file>img/Энергетический канал.jpg</file>
+        <file>img/Энергетический канал-min.jpg</file>
+        <file>img/Призыв ярости.jpg</file>
+        <file>img/Призыв ярости-min.jpg</file>
+        <file>img/Энергетический щит.jpg</file>
+        <file>img/Энергетический щит-min.jpg</file>
+    </qresource>
+</RCC>
