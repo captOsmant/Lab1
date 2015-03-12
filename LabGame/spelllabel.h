@@ -24,6 +24,16 @@ public:
     void setDesc(SpellDesc *d);
     SpellLabel(Spell *base, QVBoxLayout *Parent, Player* I, Player* Enemy);
     ~SpellLabel();
+
+signals:
+    void clicked();
+    void spellAtk(QString,int,int,int,int,int,int,int,int,int,int,int);
+
+public slots:
+    void sendAttack();
+protected:
+    void mouseReleaseEvent(QMouseEvent *e);
+
 };
 
 #endif // SPELLLABEL_H

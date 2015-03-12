@@ -23,6 +23,9 @@ SpellLabel::SpellLabel(Spell *base, QVBoxLayout *Parent, Player* I, Player *Enem
     if (base->type==4) this->setStyleSheet("SpellLabel {border: 2px solid #9400D3;}");
     this->setAlignment(Qt::AlignTop);
     //this->setMouseTracking(true);
+
+    QObject::connect(this,SIGNAL(clicked()),this,SLOT(sendAttack()));
+    QObject::connect(this,SIGNAL(spellAtk(QString,int,int,int,int,int,int,int,int,int,int,int)),I,SLOT(spellAttack(QString,int,int,int,int,int,int,int,int,int,int,int)));
 }
 
 SpellLabel::~SpellLabel()
@@ -40,3 +43,9 @@ void SpellLabel::enterEvent(QEvent *e){
 
 }
 
+void SpellLabel::mouseReleaseEvent(QMouseEvent *e){
+    emit clicked();
+}
+void SpellLabel::sendAttack(){
+    emit spellAtk(this->base->name,this->base->price,this->base->damage,this->base->heal,this->base->Eattack,this->base->Mattack,this->base->Edefence,this->base->Mdefence,this->base->Eluck, this->base->Mluck, this->base->Emana, this->base->Mmana);
+}
