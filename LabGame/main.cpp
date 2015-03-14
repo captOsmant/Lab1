@@ -24,8 +24,8 @@ int main(int argc, char *argv[])
     QVBoxLayout *Center = new QVBoxLayout();
     QTextEdit *Memo = new QTextEdit("Game Statistics");
     Center->addWidget(Memo);
-    Player *I = new Player(10,300,30,6,(char*)"Capt Osmant",7,false,*Memo);
-    Player *Enemy = new Player(15,300,30,6,(char*)"Jack Albatraos",4,true,*Memo);
+    Player *I = new Player(10,300,60,6,(char*)"Capt Osmant",7,false,*Memo);
+    Player *Enemy = new Player(22,300,60,6,(char*)"Jack Albatraos",4,true,*Memo);
 
     QVBoxLayout *MeInfo= new QVBoxLayout();
     I->Info->setText(I->getChars());
@@ -63,8 +63,15 @@ int main(int argc, char *argv[])
     Spell *Stoning = new Spell("Окаменение","Повышает защиту противника на 13,\nпонижает его атаку на 15.\nНаносит противнику 20 урона.",29,20,0,-15,0,13,0,0,0,0,0,4);
     Spell *DarkBreathe = new Spell("Дыхание тьмы","Понижает удачу каждого \nигрока до нуля, понижает\nзащиту противника на 5,\nповышает атаку игрока на 6.",45,0,0,0,6,-5,0,-100,-100,0,0,4);
     Spell *Canal = new Spell("Энергетический канал","Дает игроку 15 единиц маны.",6,0,0,0,0,0,0,0,0,0,15,2);
-    Spell *Envy = new Spell("Призыв ярости","Мгновенно увеличивает атаку\nигрока на 5.",24,0,0,0,5,0,0,0,0,0,0,3);
-    Spell *Shield = new Spell("Энергетический щит","Создате вокруг игрока силовое\nполе, которое наносит противнику\n10 урона и повышает защиту игрока\nна 4.",22,10,0,0,0,0,4,0,0,0,0,3);
+    Spell *Envy = new Spell("Призыв ярости","Мгновенно увеличивает атаку\nигрока на 5.",24,0,0,0,5,0,0,0,0,0,0,2);
+    Spell *Shield = new Spell("Энергетический щит","Создате вокруг игрока силовое\nполе, которое наносит противнику\n10 урона и повышает защиту игрока\nна 4.",22,10,0,0,0,0,4,0,0,0,0,2);
+    Spell *CallToDark = new Spell("Призыв ко тьме","Наносит игроку 25 урона.\nПонижает атаку, защиту и удачу\nпротивника на 4.",26,0,-25,-4,0,-4,0,-4,0,0,0,4);
+    Spell *LifeEnergy = new Spell("Энергия жизни","Излечивает игроку 130 единиц жизни.\nОтнимает всю имеющуюся у него ману.",48,0,130,0,0,0,0,0,0,0,-1000,2);
+    Spell *ProtonArrow = new Spell("Протонная стрела","Наносит противнику 8 урона.\nПротивник лишается 5 маны.",4,8,0,0,0,0,0,0,0,-5,0,1);
+    Spell *Burning = new Spell("Сожжение","Уменьшает защиту противника на 7.\nПротивник теряет 25 здоровья и 10 маны.",38,25,0,0,0,-6,0,0,0,-10,0,4);
+    Spell *DarkTouch = new Spell("Прикосновение тьмы","Понижает атаку и защиту\nпротивника на 1",7,0,0,-1,0,-1,0,0,0,0,0,4);
+    Spell *Freezing = new Spell("Заледенение","Наносит противнику 30 урона.\nЛишает противника всей его защиты.",39,30,0,0,0,-100,0,0,0,0,0,1);
+
     QVBoxLayout *SpellV = new QVBoxLayout();
 
     SpellDesc *Charm = new SpellDesc();
@@ -82,36 +89,41 @@ int main(int argc, char *argv[])
     SpellLabel *for7 = new SpellLabel(DeMemorize,SpellV,I,Enemy);
     SpellLabel *for8 = new SpellLabel(EnergyRitual,SpellV,I,Enemy);
 
-    QHBoxLayout *ShortSpells = new QHBoxLayout();
+    QHBoxLayout *ShortSpells1 = new QHBoxLayout();
     QHBoxLayout *ShortSpells2 = new QHBoxLayout();
+    QHBoxLayout *ShortSpells3 = new QHBoxLayout();
 
-    ShortSpells->addWidget(for1,1,Qt::AlignLeft); ShortSpells->addWidget(for2,2,Qt::AlignLeft);
-    ShortSpells->addWidget(for3,30,Qt::AlignLeft); ShortSpells->addWidget(for4,300,Qt::AlignLeft);
-    ShortSpells->addWidget(for5,900,Qt::AlignLeft);ShortSpells->addWidget(for6,900,Qt::AlignLeft);
-    ShortSpells->addWidget(for7,900,Qt::AlignLeft);
-    ShortSpells->addWidget(new SpellLabel(Envy,SpellV,I,Enemy),1000,Qt::AlignLeft);
 
-    ShortSpells2->addWidget(for8,900,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(Destruction,SpellV,I,Enemy),1,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(FireRitual,SpellV,I,Enemy),2,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(Poisoning,SpellV,I,Enemy),40,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(Stoning,SpellV,I,Enemy),90,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(DarkBreathe,SpellV,I,Enemy),90,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(Canal,SpellV,I,Enemy),90,Qt::AlignLeft);
-    ShortSpells2->addWidget(new SpellLabel(Shield,SpellV,I,Enemy),1000,Qt::AlignLeft);
-    SpellV->addLayout(ShortSpells);
+    ShortSpells1->addWidget(new SpellLabel(ProtonArrow,SpellV,I,Enemy),1,Qt::AlignLeft);
+    ShortSpells1->addWidget(for3,1,Qt::AlignLeft);
+    ShortSpells1->addWidget(for2,10,Qt::AlignLeft);
+    ShortSpells1->addWidget(new SpellLabel(Poisoning,SpellV,I,Enemy),40,Qt::AlignLeft);
+    ShortSpells1->addWidget(for5,80,Qt::AlignLeft);
+    ShortSpells1->addWidget(new SpellLabel(Freezing,SpellV,I,Enemy),400,Qt::AlignLeft);
+    ShortSpells1->addWidget(new SpellLabel(Destruction,SpellV,I,Enemy),900,Qt::AlignLeft);
+
+
+    ShortSpells2->addWidget(for6,1,Qt::AlignLeft);
+    ShortSpells2->addWidget(new SpellLabel(Canal,SpellV,I,Enemy),10,Qt::AlignLeft);
+    ShortSpells2->addWidget(new SpellLabel(FireRitual,SpellV,I,Enemy),20,Qt::AlignLeft);
+    ShortSpells2->addWidget(for1,30,Qt::AlignLeft);
+    ShortSpells2->addWidget(for8,40,Qt::AlignLeft);
+    ShortSpells2->addWidget(new SpellLabel(Shield,SpellV,I,Enemy),50,Qt::AlignLeft);
+    ShortSpells2->addWidget(new SpellLabel(Envy,SpellV,I,Enemy),60,Qt::AlignLeft);
+    ShortSpells2->addWidget(new SpellLabel(LifeEnergy,SpellV,I,Enemy),70,Qt::AlignLeft);
+
+    ShortSpells3->addWidget(new SpellLabel(DarkTouch,SpellV,I,Enemy),1,Qt::AlignLeft);
+    ShortSpells3->addWidget(for4,0,Qt::AlignLeft);
+    ShortSpells3->addWidget(new SpellLabel(CallToDark,SpellV,I,Enemy),10,Qt::AlignLeft);
+    ShortSpells3->addWidget(new SpellLabel(Stoning,SpellV,I,Enemy),40,Qt::AlignLeft);
+    ShortSpells3->addWidget(for7,90,Qt::AlignLeft);
+    ShortSpells3->addWidget(new SpellLabel(Burning,SpellV,I,Enemy),390,Qt::AlignLeft);
+    ShortSpells3->addWidget(new SpellLabel(DarkBreathe,SpellV,I,Enemy),990,Qt::AlignLeft);
+
+    SpellV->addLayout(ShortSpells1);
     SpellV->addLayout(ShortSpells2);
+    SpellV->addLayout(ShortSpells3);
     SpellV->addLayout(Charm);
-
-    //QObject::connect(for1,SIGNAL(clicked(bool)),I,SLOT(attack(bool)));
-    //SpellV->addLayout(LC2);
-    //SpellV->addLayout(LC1);
-    //SpellV->addLayout(LC3);
-    //SpellV->addLayout(LC4);
-
-
-
-
 
     Player::connect(MeAttack,&QPushButton::clicked,I,&Player::attack);
     Player::connect(MeHeal,&QPushButton::clicked,I,&Player::heal);
@@ -128,8 +140,6 @@ int main(int argc, char *argv[])
 
 
     QVBoxLayout *En = new QVBoxLayout();
-
-
 
     QVBoxLayout *EnemyInfo = new QVBoxLayout();
     QLabel *header = new QLabel(Enemy->getName());
